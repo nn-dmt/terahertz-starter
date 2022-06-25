@@ -48,7 +48,7 @@ This version is alpha. There will be issues, and not all features from productio
 
 ## Troubleshooting
 
-This framework combines js,css and frontend together via laravel mix with the Just In Time engine.
+This framework combines front end assets together via laravel mix with the Just In Time engine.
 
 This means that your compiled assets remain incredibly small for optimal performance.
 
