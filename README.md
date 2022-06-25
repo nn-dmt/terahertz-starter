@@ -9,6 +9,7 @@
 
 •Webserver
 
+•Snipcart merchant account (for fiat cart integration)
 
 If on Mac, we highly recommend Laravel Valet for local development: https://laravel.com/docs/9.x/valet
 
