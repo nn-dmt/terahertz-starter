@@ -1,11 +1,9 @@
 # Terahertz Starter kit for Statamic/Laravel
 ## Created by Swamp.Audio with the help of the Statamic Team
 
-Rename .env.example to .env
+Navigate to project directory in terminal
 
-Setup .env file for specific environment (laravel valet reccomended for local development)
-
-Navigate to project directory in CLI
+Rename .env.example to .env with ```mv .env.example .env```
 
 Install PHP dependencies with ```composer install```
 
