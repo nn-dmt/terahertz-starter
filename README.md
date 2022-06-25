@@ -81,3 +81,5 @@ After receiving your public API key from Snipcart you can uncomment the <script>
 This site utilizes special fields for decentralized payment processing using Ergo blockchain.
 
 In order to utilize the 'Ergo Price' field - you must have the [Ergo Payment Portal and Voucher Monitor Server](https://github.com/ThierryM1212/ergo-pay) running on localhost, as well as a way to expose the Payment Portal front end to the web on port 80/443.
+
+IF YOU DO NOT HAVE THE MONITOR SERVER RUNNING AT THE VERY LEAST, SETTING AN ERGO PRICE WILL CAUSE A 500 ERROR ON THAT PRODUCT
