@@ -2,9 +2,9 @@
 ### alpha release 0.0.1
 ### Created by Swamp.Audio with the help of the Statamic Team
 
-Laravel Documentation: https://laravel.com/docs/9.x
+[Laravel Documentation](https://laravel.com/docs/9.x)
 
-Statamic Documentation: https://statamic.dev/
+[Statamic / Antlers Documentation](https://statamic.dev/new-antlers-parser#about)
 
 ## System Requirements
 •PHP8
@@ -19,7 +19,8 @@ Statamic Documentation: https://statamic.dev/
 
 •Snipcart merchant account (for fiat cart integration)
 
-If on Mac, we highly recommend Laravel Valet for local development: https://laravel.com/docs/9.x/valet
+If on Mac, we highly recommend [Laravel Valet](https://laravel.com/docs/9.x/valet) for local development.
+
 
 ## Installation
 
