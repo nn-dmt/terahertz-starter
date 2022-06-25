@@ -60,3 +60,8 @@ This means that your compiled assets remain incredibly small for optimal perform
 It also means that if you make a design change and include a new class not before rendered by the engine, it will not display properly.
 
 The solution to this issue is to run ```npm run watch``` to watch for changes actively or ```npm run production``` after changes have been finalized.
+
+
+## Snipcart
+
+This site utilizes a third partt drop-in called Snipcart for fiat payment processing. In order to utilize Snipcart in your own project you must sign up for a merchant account at [Snipcart.com](https://snipcart.com)
