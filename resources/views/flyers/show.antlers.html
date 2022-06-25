@@ -1,0 +1,55 @@
+<div class="mx-auto max-w-6xl bg-repeat-y bg-center rounded-lg py-6 px-6" style="background-image: url('{{ glide:event_hero format="webp" }}')">
+{{ if sponsor_logo }}
+<img src="{{ glide:sponsor_logo format="webp"}}" width="300px">
+{{ else }}
+{{ sponsor_name }}
+{{ /if }}
+<div class="pl-8 text-white">
+	<h1 class="inline-block">{{ presents_text }}</h1>
+	<h1 class="inline-block">{{ title }}</h1>
+</div>
+
+
+<div class="pt-6 mx-auto relative z-10">
+<div class="mx-auto rounded-lg shadow-2xl mx-auto bg-cover max-w-5xl bg-repeat-y bg-center" style="background-image: url('{{ glide:flyer_background_image format="webp" }}')">
+<div class="mx-auto rounded-lg mx-auto px-8 max-w-5xl bg-gradient-to-br bg-opacity-75 from-gray-200 backdrop-blur-sm md:backdrop-blur-none">
+<div class="mx-auto">
+    <div class="flex items-start">
+
+        <article class="py-12 pr-12 md:pr-24 flex-1">
+
+<div class="text-2xl text-strong text-gray-800">
+{{ event_subtext }}
+</div>
+
+{{ hero_text }}
+
+{{ lineup_header }}
+{{ headliner }}
+{{ lineup }}
+{{ visual_artists }}
+
+	</article>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="x-auto max-w-6xl bg-repeat-y bg-center rounded-lg py-6 px-6 text-white">
+
+{{ lineup_header }}
+
+
+{{ headliner }}
+
+{{ title }}
+
+{{ /headliner }}
+
+
+{{ lineup }}
+{{ visual_artists }}
+
+</div>
