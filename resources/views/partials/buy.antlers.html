@@ -1,0 +1,48 @@
+<section>
+    
+{{ if price_fiat > 0 }}
+{{ if snipcart_guid }}
+<div class="mt-4 shadow-md inline-block hover:text-white text-strong text-sm bg-white text-gray-800 hover:bg-green-600 rounded-lg px-6 py-2 mx-2">
+<button
+  class="snipcart-add-item"
+  data-item-id="{{ slug }}"
+  data-item-price="{{ price_fiat }}"
+  data-item-url="{{ url }}"
+  data-item-description="{{ content }}"
+  data-item-image="{{ album_artwork }}"
+  data-item-file-guid="{{ snipcart_guid }}"
+  data-item-name="{{ title }}" >
+<b>BUY ALBUM ${{ price_fiat }} USD</b>
+</button>
+{{ /if }}
+</div>
+{{ /if }}
+
+{{ if price_ergo > 0 }}
+<div class="mt-4 shadow-md inline-block text-white text-strong text-sm bg-yellow-600 hover:text-gray-800 hover:bg-white rounded-lg px-6 py-2 mx-2">
+<button>
+<a class="no-underline" target="_blank" href="https://dev.swamp.audio/pay.html?address={{ if artist_ergo }}{{ display }}{{ else }}{{ swamp_ergo }}{{ /if }}&currency=ERG&amount={{ price_ergo }}&ref={{ catalog_number }}{{ csrf_token }}"><b>BUY ALBUM ∑ {{ price_ergo }} ERG</b></a>
+</button>
+</div>
+
+{{  placid
+    host="http://localhost:3030"
+    path="/"
+    query="address:{ swamp_ergo }|limit:200|ref:{ catalog_number }{ csrf_token }"
+}}
+
+{{ response.data }}
+<div class="mt-4 shadow-md inline-block hover:text-white text-strong text-sm bg-white text-gray-800 hover:bg-green-600 rounded-lg px-6 py-2 mx-2">
+
+<a href="{{ zip:archive :filename='title' }}">
+<button>Download {{ title }}
+</button>
+</a>        
+
+</div>
+
+{{ /response.data }}
+{{ /placid }}
+
+{{ /if }}
+</section>

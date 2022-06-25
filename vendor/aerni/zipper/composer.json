@@ -1,0 +1,70 @@
+{
+    "name": "aerni/zipper",
+    "description": "Zip your Statamic assets on the fly",
+    "keywords": [
+        "statamic",
+        "zip",
+        "zipper"
+    ],
+    "homepage": "https://github.com/aerni/statamic-zipper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Aerni",
+            "email": "hello@michaelaerni.ch",
+            "homepage": "https://www.michaelaerni.ch",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "aws/aws-sdk-php": "^3.224",
+        "laravel/framework": "^9.0",
+        "statamic/cms": "~3.3.12",
+        "stechstudio/laravel-zipstream": "^4.8"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "nunomaduro/collision": "^6.1",
+        "orchestra/testbench": "^7.5",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aerni\\Zipper\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aerni\\Zipper\\Tests\\": "tests"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Zipper",
+            "description": "Generate a zip of your files"
+        },
+        "laravel": {
+            "providers": [
+                "Aerni\\Zipper\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

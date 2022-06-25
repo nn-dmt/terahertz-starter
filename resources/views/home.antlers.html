@@ -1,0 +1,24 @@
+<div class="max-w-6xl mx-auto py-4 md:py-16 relative z-10">
+<div class="mx-auto rounded-lg shadow-xl mx-auto bg-cover max-w-6xl bg-repeat-y bg-center" style="background-image: url('{{ glide:podcast:cover_art format="webp" }}')">
+<div class="mx-auto rounded-lg mx-auto pl-8 max-w-6xl bg-white bg-opacity-75">
+    <div class="flex flex-col md:flex-row items-center">
+        <div class="order-2 md:order-first md:pr-32 flex-1 py-8">
+            <h1 class="mb-6">{{ podcast:title }}</h1>
+            <p class="text-gray-500 w-196 text-lg">{{ podcast:description | widont }}</p>
+            <div class="flex flex-wrap items-center justify-center md:justify-start space-x-4">
+                {{ links }}
+                    <a href="{{ link }}" target="_blank" class="mt-8">
+                        <img class="h-10 transition duration-200 ease-in-out filter transform-gpu hover:drop-shadow-lg hover:-translate-y-1"
+                            src="{{ badge }}"
+                            alt="Listen on {{ title }}" />
+                    </a>
+                {{ /links }}
+            </div>
+        </div>
+        <div class="hidden md:block w-full md:w-[500px]">
+            <img src="{{ glide:podcast:cover_art square="1000" format="webp" }}" alt="{{ podcast:title }} Cover Art" width="500" height="500" class="rounded-lg shadow-xl md:shadow-3xl">
+        </div>
+    </div>
+</div>
+</div>
+</div>

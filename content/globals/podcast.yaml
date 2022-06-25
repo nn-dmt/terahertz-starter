@@ -1,0 +1,24 @@
+title: Podcast
+data:
+  title: 'Terahertz by Swamp.Audio'
+  cover_art: artwork/screen-shot-2022-04-05-at-7.58.02-am.png
+  description: 'A deep dive into the primordial soup of the soul.'
+  type: desc
+  primary_category: 'Music » Music Commentary'
+  secondary_category: 'Music » Music Interviews'
+  keywords:
+    - psychedelic
+    - 'bass music'
+    - 'burning man'
+    - festivals
+    - 'visionary art'
+    - 'counter culture'
+  spoken_language: en
+  author: Terahertz
+  copyright: '© {{ now format="Y" }} Terahertz'
+  owner_name: Terahertz
+  explicit: true
+  itunes_block: false
+  google_block: false
+  locked: true
+  complete: false

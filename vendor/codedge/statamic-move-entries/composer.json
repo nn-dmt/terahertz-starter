@@ -1,0 +1,64 @@
+{
+  "name": "codedge/statamic-move-entries",
+  "type": "statamic-addon",
+  "description": "Move entries in the Control Panel",
+  "keywords": [
+    "statamic",
+    "move",
+    "entries",
+    "control",
+    "panel",
+    "control panel"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Holger Lösken",
+      "email": "holger.loesken@codedge.de",
+      "homepage": "https://www.codedge.de"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "statamic/cms": "^3.1"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.17.0",
+    "phpunit/phpunit": "^9.5",
+    "spatie/ray": "^1.21"
+  },
+  "config": {
+    "process-timeout": 0,
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Codedge\\MoveEntries\\ServiceProvider"
+      ]
+    },
+    "statamic": {
+      "description": "Move entries in the Control Panel",
+      "name": "Move Entries"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Codedge\\MoveEntries\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Codedge\\MoveEntries\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --debug --testdox",
+    "test-clover-coverage": "./vendor/bin/phpunit --coverage-clover clover.xml",
+    "test-coverage": "./vendor/bin/phpunit --coverage-html coverage"
+  },
+  "support": {
+    "issues": "https://github.com/codedge/statamic-move-entries/issues",
+    "source": "https://github.com/codedge/statamic-move-entries"
+  }
+}

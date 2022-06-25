@@ -1,0 +1,23 @@
+{
+    "name": "sortarad/needledrop",
+    "description": "The web is too quiet, let's make it noisy.",
+    "keywords": ["statamic"],
+    "homepage": "https://github.com/sortarad/needledrop",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sortarad\\Needledrop\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Needledrop",
+            "description": "Needledrop addon"
+        },
+        "laravel": {
+            "providers": [
+                "Sortarad\\Needledrop\\ServiceProvider"
+            ]
+        }
+    }
+}

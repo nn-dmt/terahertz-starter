@@ -1,0 +1,10 @@
+<div class="mx-auto max-w-[1440px] z-10 relative px-6 pt-8 pb-8">
+{{ collection:music limit="0" sort="catalog_number:desc" }}
+ 
+<div class="mb-8 px-4 py-2 sm:block md:inline-block md:max-w-[300px]">
+ {{ partial:music/album/card }}
+</div>
+
+            {{ /collection:music }}
+
+</div>

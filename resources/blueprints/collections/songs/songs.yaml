@@ -1,0 +1,530 @@
+order: 1
+title: Tracks
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          width: 75
+      -
+        handle: track_number
+        field:
+          display: 'Track Number'
+          type: integer
+          icon: integer
+          width: 25
+          listable: hidden
+      -
+        handle: artist_name
+        field:
+          mode: default
+          create: true
+          collections:
+            - artists
+          display: 'Track Artist(s)'
+          type: entries
+          icon: entries
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: remixer
+        field:
+          mode: default
+          create: true
+          collections:
+            - artists
+          display: Remixer
+          type: entries
+          icon: entries
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            track_type: 'equals remix'
+      -
+        handle: release
+        field:
+          mode: default
+          create: true
+          collections:
+            - music
+          display: Release
+          type: entries
+          icon: entries
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          max_items: 1
+      -
+        handle: audio_file
+        field:
+          mode: list
+          container: assets
+          folder: music
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Audio File'
+          type: assets
+          icon: assets
+          listable: hidden
+          validate:
+            - 'mimes:mp3,m4a,aiff,wav'
+          width: 50
+          instructions_position: above
+          read_only: false
+          show_filename: true
+      -
+        handle: high_resolution_file
+        field:
+          mode: list
+          container: assets
+          folder: music
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          display: 'High Resolution File'
+          type: assets
+          icon: assets
+          instructions: 'Only for lossless files'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - 'mimes:audio/wav'
+      -
+        handle: track_type
+        field:
+          options:
+            original_mix: 'Original Mix'
+            remix: Remix
+            bonus: 'Bonus Track'
+          default: full
+          inline: true
+          cast_booleans: false
+          display: 'Track Type'
+          type: button_group
+          icon: radio
+          listable: hidden
+          width: 33
+      -
+        handle: artwork
+        field:
+          mode: grid
+          container: assets
+          folder: artwork
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Artwork
+          type: assets
+          icon: assets
+          listable: hidden
+          width: 50
+          instructions_position: above
+          read_only: false
+          show_filename: true
+      -
+        handle: summary
+        field:
+          antlers: false
+          display: 'Short Summary'
+          type: textarea
+          icon: textarea
+          listable: hidden
+          width: 50
+      -
+        handle: description
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+          save_html: true
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: true
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          display: 'Description / Release Notes'
+          type: bard
+          icon: bard
+          listable: hidden
+      -
+        handle: lyrics
+        field:
+          always_show_set_button: false
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: Lyrics
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: explicit
+        field:
+          display: Explicit
+          type: toggle
+          icon: toggle
+          instructions: 'Does the track contain explicit content?'
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: release_date
+        field:
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Release Date'
+          type: date
+          icon: date
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: price_fiat
+        field:
+          display: 'Price (fiat)'
+          type: integer
+          icon: integer
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          width: 50
+      -
+        handle: price_ergo
+        field:
+          display: 'Price (Ergo)'
+          type: integer
+          icon: integer
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          width: 50
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+          display: 'Entry Date'
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+  settings:
+    display: 'Advanced Settings'
+    fields:
+      -
+        handle: itunes_block
+        field:
+          display: 'Block from iTunes'
+          type: toggle
+          icon: toggle
+          instructions: 'If you want an episode removed from the Apple directory, flip this on.'
+          listable: hidden
+      -
+        handle: google_block
+        field:
+          display: 'Block from Google Play'
+          type: toggle
+          icon: toggle
+          instructions: 'If you want an episode removed from the Google Play directory, flip this on.'
+          listable: hidden
+  SEO:
+    display: SEO
+    fields:
+      -
+        handle: seotamic_meta
+        field:
+          display: Meta
+          listable: hidden
+          type: section
+          localizable: false
+      -
+        handle: seotamic_title
+        field:
+          options:
+            title: Title
+            custom: Custom
+          clearable: false
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          default: title
+          display: Title
+          instructions: 'It can be used to determine the title used on search engine results pages.'
+      -
+        handle: seotamic_custom_title
+        field:
+          input_type: text
+          character_limit: 100
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Custom Meta Title'
+          if:
+            seotamic_title: 'equals custom'
+      -
+        handle: seotamic_title_prepend
+        field:
+          type: toggle
+          instructions: 'Prepends to title the text set in General SEO settings'
+          localizable: false
+          default: true
+          width: 50
+          listable: hidden
+          display: 'Title prepend'
+      -
+        handle: seotamic_title_append
+        field:
+          type: toggle
+          localizable: false
+          instructions: 'Appends to title the text set in General SEO settings'
+          width: 50
+          listable: hidden
+          default: true
+          display: 'Title append'
+      -
+        handle: seotamic_meta_description
+        field:
+          options:
+            empty: Empty
+            general: General
+            custom: Custom
+          clearable: false
+          default: empty
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          instructions: 'It can be used to determine the text used under the title on search engine results pages. If empty, search engines will automatically generate this text.'
+          localizable: false
+          listable: hidden
+          display: 'Meta description'
+      -
+        handle: seotamic_custom_meta_description
+        field:
+          input_type: text
+          character_limit: 200
+          type: textarea
+          localizable: false
+          listable: hidden
+          display: 'Custom Meta description'
+          if:
+            seotamic_meta_description: 'equals custom'
+      -
+        handle: seotamic_canonical
+        field:
+          type: link
+          instructions: 'By default it will be set to the page url'
+          localizable: false
+          listable: hidden
+          display: Canonical
+      -
+        handle: seotamic_social
+        field:
+          type: section
+          localizable: false
+          listable: hidden
+          display: Social
+      -
+        handle: seotamic_open_graph_title
+        field:
+          options:
+            title: Title
+            general: General
+            custom: Custom
+          clearable: false
+          default: title
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Open Graph title'
+      -
+        handle: seotamic_custom_open_graph_title
+        field:
+          input_type: text
+          character_limit: 100
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Custom Open Graph title'
+          if:
+            seotamic_open_graph_title: 'equals custom'
+      -
+        handle: seotamic_open_graph_description
+        field:
+          options:
+            meta: 'Meta description'
+            general: 'General description'
+            custom: Custom
+          clearable: false
+          default: general
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Open Graph description'
+      -
+        handle: seotamic_custom_open_graph_description
+        field:
+          input_type: text
+          character_limit: 200
+          type: textarea
+          localizable: false
+          listable: hidden
+          display: 'Custom Open Graph description'
+          if:
+            seotamic_open_graph_description: 'equals custom'
+      -
+        handle: seotamic_twitter_title
+        field:
+          options:
+            title: Title
+            general: General
+            custom: Custom
+          clearable: false
+          default: title
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Twitter title'
+      -
+        handle: seotamic_custom_twitter_title
+        field:
+          input_type: text
+          character_limit: 100
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Custom Twitter title'
+          if:
+            seotamic_twitter_title: 'equals custom'
+      -
+        handle: seotamic_twitter_description
+        field:
+          options:
+            meta: 'Meta description'
+            general: 'General description'
+            custom: Custom
+          clearable: false
+          default: general
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Twitter description'
+      -
+        handle: seotamic_custom_twitter_description
+        field:
+          input_type: text
+          character_limit: 200
+          type: textarea
+          localizable: false
+          listable: hidden
+          display: 'Custom Twitter description'
+          if:
+            seotamic_twitter_description: 'equals custom'
+      -
+        handle: seotamic_image
+        field:
+          container: assets
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          instructions: "If not set, the general image will be used. It's best to use an image with a 1.91:1 aspect ratio that is at least 1200px wide for universal support. The image will be resized to 1200 width."
+          localizable: false
+          listable: hidden
+          display: Image

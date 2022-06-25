@@ -1,0 +1,66 @@
+<div class="pt-6 mx-auto relative z-10">
+
+<div class="mx-auto rounded-lg shadow-xl mx-auto bg-cover max-w-6xl bg-repeat-y bg-center" style="background-image: url('{{ glide:artwork format="webp" }}')">
+<div class="mx-auto rounded-lg mx-auto px-8 max-w-6xl bg-white bg-opacity-60 backdrop-blur-sm">
+<div class="mx-auto">
+    <div class="flex items-start">
+        <article class="py-12 pr-12 md:pr-24 flex-1">            <h1 class="mb-6">{{ title }}</h1>
+            <div class="flex items-start">
+                {{ partial:play-button height="h-10" width="h-10" }}
+                <div>
+                {{ if remixer }}    
+		<p class="text-gray-800 text-lg">Original by:
+		{{ else }}
+		<p class="text-gray-800 text-lg">Track by: 
+		{{ /if }}	
+{{ artist_name }}
+<b><a href="{{ url }}">{{ title }}</a> {{ if artist_name > 1 }} <span class="text-gray-300 text-xs"> •</span>{{ /if }}</b>
+{{ /artist_name }}</p>
+{{ if remixer }}
+<span class="text-gray-800 text-lg">Remix by:</span>
+{{ remixer }}
+<b><a href="{{ url }}">{{ title }}</a> {{ if artist_name > 1 }} <span class="text-gray-300 text-xs"> // </span>{{ /if }}</b>
+{{ /remixer }}
+{{ /if }}
+                   
+			<div class="mt-4 font-mono text-gray-500 text-sm flex space-x-3 uppercase tracking-widest">
+                        <span>{{ release_date }}</span>
+                        <span>/</span>
+                        <span>{{ audio_file:playtime }}</span>
+                        <span>/</span>
+                        <a href="{{ release:url }}">
+			<span>Track {{ track_number }} on <b>{{ release:title }}</b></span>
+                        </a>
+	
+			</div>
+                </div>
+            </div>
+	{{ partial:buycard }}
+	{{ if description }}
+ <div class="mt-8 content pt-8">
+                <h2>Release Notes</h2>
+                {{ description }}
+            {{ /if }}
+
+	{{ if lyrics }}
+	<div class="mt-8 content pt-8 border-t">	
+	<h2>Lyrics</h2>
+	{{ lyrics }}
+	{{ /if }}
+
+        </article>
+
+<div class="hidden md:block w-[175px] relative mt-6">
+                <a href="{{ artwork:url }}" target="_blank">
+                <img src="{{ glide:artwork square="600" format="webp" }}"
+                        alt="{{ artwork:alt ?? "Album Artwork" }}" width="300" class="shadow-2xl inset-0 absolute z-10 rounded-full hover:animate-spin hover:duration-700 hover:opacity-75 ease-in-out transform-gpu">
+                </a>
+</div>
+
+
+
+    </div>
+</div>
+</div>
+</div>
+</div>

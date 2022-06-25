@@ -1,0 +1,24 @@
+{{ entries_field }}
+<div class="">
+<div class="bg-gray-50 min-w-lg max-w-xl shadow-md rounded-t-lg rounded-b-lg border-t mt-2 py-2 px-2 flex items-start">
+    {{ partial:play-button }}
+    <div class="">
+        <h3 class="">
+            <a href="{{ url }}" class="no-underline text-lg font-bold hover:text-gray-700 leading-snug">{{ title | widont }}</a>
+        </h3>
+        <p class="text-sm antialiased">Track By:
+{{ artist_name }}
+ <a href="{{ url }}">{{ title }}</a> {{ if artist_name > 1 }} <span class="text-gray-300 text-xs"> •</span>{{ /if }}
+{{ /artist_name }}</p>
+        <div class="mt-1 font-mono text-gray-400 text-xs flex flex-wrap space-x-2 md:space-x-4 uppercase tracking-widest">
+            <span>Track {{ track_number }}</span>
+            <span class="text-gray-300">/</span>
+            <span>{{ audio_file:playtime }}</span>
+                <span class="text-gray-300">/</span>
+                <span>{{ track_type:label }}</span>
+		<span class="text-gray-300">/</span>
+        </div>
+    </div>
+</div>
+</div>
+{{ /entries_field }}

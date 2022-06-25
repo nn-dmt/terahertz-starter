@@ -1,0 +1,9 @@
+title: Artists
+template: artists/show
+layout: layout
+revisions: false
+route: '/artist/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

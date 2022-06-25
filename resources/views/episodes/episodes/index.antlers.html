@@ -1,0 +1,22 @@
+<div class="max-w-6xl mx-auto px-6 relative z-10">
+<div class="mx-auto rounded-lg shadow-xl mx-auto bg-cover max-w-6xl bg-repeat-y bg-center" style="background-image: url('{{ glide:podcast:cover_art format="webp" }}')">
+<div class="mx-auto rounded-lg mx-auto pl-8 max-w-6xl bg-white bg-opacity-75">
+    <div class="flex flex-col md:flex-row">
+        <article class="order-2 md:order-first md:pr-16 flex-1 pt-8 pb-8 pr-8">
+            <h1 class="mb-8">The Green Room</h1>
+            {{ collection:episodes sort="date:{podcast:type}" }}
+                {{ partial:episodes/card }}
+            {{ /collection:episodes }}
+        </article>
+        <div class="hidden md:block order-1 md:w-[350px]">
+            <div class="md:hidden flex items-center mt-8">
+                <img src="{{ glide:podcast:cover_art square="120" }}" alt="{{ podcast:title }} Cover Artwork" width="60" class="shadow">
+                <h2 class="font-semibold text-lg ml-4">{{ podcast:title }}</h2>
+
+            </div>
+            <img src="{{ glide:podcast:cover_art square="700" format="webp" }}" alt="{{ podcast:title }} Cover Artwork" width="350" class="hidden rounded-r-lg md:block shadow-2xl">
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,12 @@
+title: Tracks
+template: music/show
+layout: layout
+mount: 771c3e5b-ca31-496e-93bb-4baf435d0401
+revisions: false
+route: '/{mount}/track/{slug}'
+date: true
+sort_dir: desc
+default_status: draft
+date_behavior:
+  past: public
+  future: private

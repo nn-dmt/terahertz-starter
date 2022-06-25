@@ -1,0 +1,19 @@
+<a href="{{ url }}" > 
+<img class="rounded-t-md min-w-[300px]" src="{{ glide:album_artwork format="webp" }}" /></a>
+<div class="bg-gray-50 pt-2 rounded-b-md shadow-xl min-w-[300px]">	
+	<div class="ml-2">
+	<h3 class="">
+            <a href="{{ url }}" class="mt-2 text-md font-bold hover:text-gray-700 leading-snug">{{ title | widont }}</a>
+        </h3>
+        <p class="text-xs antialiased">{{ release_type:title }} by 
+					<b>{{ release_artist }}
+                        <a class="no-underline" href="{{ url }}">{{ title }}</a>{{ if release_artist > 1 }} <span class="text-gray-300 text-xs"> •</span>{{ /if }}
+                        {{ /release_artist }}</b>
+			</p>
+        <div class="mt-1 font-mono text-gray-400 text-xs flex flex-wrap space-x-2 md:space-x-4 uppercase tracking-widest">
+            <span class="mb-2">{{ release_date }}</span>
+            
+        </div>
+
+	</div>
+</div>

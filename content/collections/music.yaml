@@ -1,0 +1,15 @@
+title: Releases
+template: music/release
+layout: layout
+mount: 771c3e5b-ca31-496e-93bb-4baf435d0401
+taxonomies:
+  - release_type
+revisions: false
+route: '/{mount}/album/{slug}'
+date: true
+sort_dir: desc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false

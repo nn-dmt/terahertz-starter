@@ -1,0 +1,14 @@
+<nav class="max-w-6xl mx-auto px-6 font-mono py-6 md:py-6 relative z-10 border-b md:border-0">
+<ul class="flex space-x-10 justify-center md:justify-start text-sm">
+{{ nav:music_subnav }}
+<li>
+     <a class="py-px hover:text-gray-700 {{ is_current || is_parent ?= 'font-bold border-b-3 border-black' }}" href="{{ url }}">
+       {{ title }}
+     </a>
+</li>
+{{ /nav:music_subnav }}
+</ul>
+</nav>
+    <section class="mt-8 md:mt-24">
+    </section>
+</div>

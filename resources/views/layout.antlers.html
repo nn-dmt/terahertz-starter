@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ partial:seo }}
+        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}" data-turbolinks-track="reload">
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ podcast:title }}" href="{{ route:feed }}" />
+        <script src="{{ mix src='/js/site.js' }}" data-turbolinks-track="reload" defer></script>
+        <style>
+            :root {
+                --primary-color: {{ theme:primary_color ?? "#FA7268" }};
+                --secondary-color: {{ theme:secondary_color ?? "#C62368" }};
+                --plyr-color-main: {{ theme:primary_color ?? "#C62368" }};
+            }
+        </style>
+        <script>
+            window.primaryColor = '{{ theme:primary_color ?? "#FA7268" }}';
+            window.secondaryColor = '{{ theme:secondary_color ?? "#C62368" }}';
+        </script>
+        {{ partial:favicons }}
+    </head>
+    <body class="bg-gray-700 min-h-screen h-full relative px-1">
+        <nav class="max-w-6xl mx-auto font-mono px-6 py-8 md:py-12 relative z-10">
+<ul class="flex space-x-10 justify-center md:justify-start text-sm">
+	<a href="{{ homepage }}">              
+	 <img src="/assets/img/thz-logo.png" width="150">
+	</a>
+		{{ nav include_home="false" }}
+                    <li>
+                        <a class="text-gray-200 py-px hover:text-gray-200 {{ is_current || is_parent ?= 'font-bold border-b-3 border-primary' }}" href="{{ url }}">
+                            {{ title }}
+                        </a>
+                    </li>
+
+                
+		{{ /nav }}
+<a href="#" class="snipcart-checkout">
+      <img width="24px" src="/assets/img/cart-icon.png">
+</a>
+            </ul>
+	
+	
+        </nav>
+        {{ template_content }}
+        {{ partial:player }}
+        <footer class="max-w-6xl mx-auto px-6 font-mono py-6 mt-6 relative z-10 md:border-none " x-data :class="$store.player.playing && 'pb-24'">
+            <p class="text-gray-500 text-sm"">{{ podcast:copyright }} &mdash; Powered by <a href="{{ homepage }}" class="underline hover:text-black">Music</a></p>
+            <div class="flex flex-wrap items-center space-x-5 justify-center md:justify-start mt-4">
+            {{ theme:social_links }}
+                <a href="{{ url }}" target="_blank" class="flex items-center justify-center h-5 w-5" title="{{ name }}">
+                    {{ svg :src="icon" aria-label="{name} icon" role="img" class="hover:text-black text-gray-300" }}
+                </a>
+            {{ /theme:social_links }}
+            </div>
+		{{ needledrop:assets }}
+	  <link rel="stylesheet" href="/css/plyr.css">
+        </footer>
+    </body>
+
+//<script>
+  //window.SnipcartSettings = {
+    //publicApiKey: "#",
+   // loadStrategy: "on-user-interaction",
+    //modalStyle: "side",
+  //};
+//
+ // (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).currency)!=null||(s.currency="usd");var l,p;(p=(l=window.SnipcartSettings).timeoutDuration)!=null||(l.timeoutDuration=2750);var w,u;(u=(w=window.SnipcartSettings).domain)!=null||(w.domain="cdn.snipcart.com");var m,g;(g=(m=window.SnipcartSettings).protocol)!=null||(m.protocol="https");var f,v;(v=(f=window.SnipcartSettings).loadCSS)!=null||(f.loadCSS=!0);var E=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,y=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(y.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],n=document.querySelector("#snipcart"),i=document.querySelector('src[src^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][src$="snipcart.js"]')),e=document.querySelector('link[href^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][href$="snipcart.css"]'));n||(n=document.createElement("div"),n.id="snipcart",n.setAttribute("hidden","true"),document.body.appendChild(n)),$(n),i||(i=document.createElement("script"),i.src="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.js"),i.async=!0,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement("link"),e.rel="stylesheet",e.type="text/css",e.href="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.css"),t.prepend(e)),y.forEach(function(h){return document.removeEventListener(h,o)})}function $(t){!E||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
+//</script>
+
+</html>

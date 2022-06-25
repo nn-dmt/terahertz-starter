@@ -1,0 +1,37 @@
+<div class="max-w-6xl mx-auto px-6 py-4 md:py-8 relative z-10">
+            
+<div class="py-4 px-6 bg-[url('assets/img/silver-waves.svg')] bg-white rounded-md shadow-sm border-l-8 border-green-400">
+
+{{ collection:episodes }}
+
+            <h1 class="mb-6">{{ title | entities | widont }}</h1>
+            <div class="items-start flex">
+                {{ partial:play-button height="h-10" width="h-10" }}
+                <div>
+                    <p class="text-gray-800 text-lg">{{ summary }}</p>
+                    <div class="mt-4 font-mono text-gray-500 text-xs flex space-x-3 uppercase tracking-widest">
+                        <span>{{ date }}</span>
+                        <span>/</span>
+                        <span>{{ audio_file:playtime }}</span>
+                        <span>/</span>
+                        <span>Episode {{ episode_number }}</span>
+                    </div>
+                </div>
+            </div>
+
+            {{ if description }}
+            <div class="mt-8 content pt-8 border-t">
+                <h2>Release Notes</h2>
+                {{ description }}
+            {{ /if }}
+	</div>
+            {{ if artwork }}
+                <img src="{{ glide:artwork square="600" }}" alt="{{ artwork:alt ?? "Episode Artwork" }}" width="300" class="sha>
+                <img src="{{ glide:podcast:cover_art square="600" }}" alt="{{ podcast:title }} Cover Art" width="300" class="sh>
+            {{ else }}
+                <img src="{{ glide:podcast:cover_art square="600" }}" alt="{{ podcast:title }} Cover Art" width="300" class="sh>
+            {{ /if }}
+{{ /collection:episodes }}
+
+</div>
+</div>

@@ -1,0 +1,8 @@
+title: Labels
+template: labels/show
+layout: layout
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

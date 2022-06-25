@@ -1,0 +1,24 @@
+{{ if price_fiat > 0 }}
+<div class="flex-items mt-8">
+<div class="text-gray-50 text-xs inline-block rounded-md bg-green-700 px-2 py-1 mb-2 mr-2">
+<button
+	class="snipcart-add-item"
+  data-item-id="{{ slug }}"
+  data-item-price="{{ price_fiat }}"
+  data-item-url="{{ url }}"
+  data-item-description="{{ description }}"
+  data-item-image="{{ artwork }}"
+  data-item-name="{{ title }}">
+ <b>ADD TO $CART</b>
+</button>
+</div>
+{{ /if }}
+{{ if price_ergo > 0 }}
+
+<div class="text-gray-50 text-xs inline-block rounded-md bg-yellow-700 px-2 py-1 mb-2 mr-2">
+<button>
+<a class="no-underline hover:text-gray-50" target="_blank" href="https://thierrym1212.github.io/paymentportal/pay.html?address=9gpeMRQZvvAbqAmMowXS9zfkr4GCAQLgJs93N3ZotXUpC36TcLW&currency=ERG&amount={{ price_ergo }}&ref={{ csrf_token }}"><b>BUY WITH ∑RG</b></a>
+</button>
+</div>
+</div>
+{{ /if }}

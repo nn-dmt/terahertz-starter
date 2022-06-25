@@ -1,0 +1,12 @@
+producers:
+  title: Producers
+labels:
+  title: Labels
+mastering_agents:
+  title: 'Mastering Agents'
+mix_engineers:
+  title: 'Mix Engineers'
+promoters:
+  title: Promoters
+album_artists:
+  title: 'Album Artists'

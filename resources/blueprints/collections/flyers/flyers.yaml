@@ -1,0 +1,529 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          instructions: 'Give a unique name to this specific flyer - Usually this should match the Event Name'
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          input_type: text
+          antlers: false
+      -
+        handle: sponsor_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Sponsor Name'
+          type: text
+          icon: text
+          width: 66
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: sponsor_logo
+        field:
+          mode: list
+          container: assets
+          folder: img
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Sponsor Logo'
+          type: assets
+          icon: assets
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: presents_text
+        field:
+          input_type: text
+          character_limit: 36
+          antlers: false
+          display: 'Presents Text'
+          type: text
+          icon: text
+          instructions: 'Presents this party.... Brings you this cool new thing... etc'
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: event_name
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          collections:
+            - events
+          display: 'Event Name'
+          type: entries
+          icon: entries
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: event_subtext
+        field:
+          input_type: text
+          character_limit: 48
+          antlers: false
+          display: 'Event Subtext'
+          type: text
+          icon: text
+          instructions: 'A musical occasion... a special event... the best party ever... etc'
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: hero_artist
+        field:
+          mode: default
+          create: true
+          collections:
+            - artists
+          display: 'Hero Artist'
+          type: entries
+          icon: entries
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: event_hero
+        field:
+          mode: list
+          container: assets
+          folder: img
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Event Hero'
+          type: assets
+          icon: assets
+          instructions: 'The Hero Image goes above the lineup and can contain text inside of it.'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: hero_text
+        field:
+          antlers: false
+          display: 'Hero Text'
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: ticket_price
+        field:
+          display: 'Ticket Price'
+          type: integer
+          icon: integer
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+  lineup:
+    display: Lineup
+    fields:
+      -
+        handle: headliner
+        field:
+          mode: default
+          create: true
+          display: Headliner(s)
+          type: entries
+          icon: entries
+          instructions: 'The best of the best'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          collections:
+            - artists
+      -
+        handle: subheadliners
+        field:
+          mode: default
+          create: true
+          collections:
+            - artists
+          display: Sub-Headliner(s)
+          type: entries
+          icon: entries
+          instructions: 'They''re pretty dope too!'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: line-up
+        field:
+          mode: default
+          create: true
+          collections:
+            - artists
+          display: Line-Up
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: visual_artists
+        field:
+          mode: default
+          create: true
+          collections:
+            - artists
+          display: 'Visual Artists'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  venue:
+    display: Venue
+    fields:
+      -
+        handle: vendors
+        field:
+          mode: default
+          create: true
+          collections:
+            - vendors
+          display: Vendors
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  flyer_design:
+    display: 'Flyer Design'
+    fields:
+      -
+        handle: flyer_background_image
+        field:
+          mode: list
+          container: assets
+          folder: img
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Flyer Background Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: header_text_color
+        field:
+          theme: nano
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Header Text Color'
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: headliner_color
+        field:
+          theme: nano
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Headliner Color'
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: subheadliner_color
+        field:
+          theme: classic
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Sub-headliner Color'
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: line_up_color
+        field:
+          theme: nano
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Line Up Color'
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  SEO:
+    display: SEO
+    fields:
+      -
+        handle: seotamic_meta
+        field:
+          display: Meta
+          listable: hidden
+          type: section
+          localizable: false
+      -
+        handle: seotamic_title
+        field:
+          options:
+            title: Title
+            custom: Custom
+          clearable: false
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          default: title
+          display: Title
+          instructions: 'It can be used to determine the title used on search engine results pages.'
+      -
+        handle: seotamic_custom_title
+        field:
+          input_type: text
+          character_limit: 100
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Custom Meta Title'
+          if:
+            seotamic_title: 'equals custom'
+      -
+        handle: seotamic_title_prepend
+        field:
+          type: toggle
+          instructions: 'Prepends to title the text set in General SEO settings'
+          localizable: false
+          default: true
+          width: 50
+          listable: hidden
+          display: 'Title prepend'
+      -
+        handle: seotamic_title_append
+        field:
+          type: toggle
+          localizable: false
+          instructions: 'Appends to title the text set in General SEO settings'
+          width: 50
+          listable: hidden
+          default: true
+          display: 'Title append'
+      -
+        handle: seotamic_meta_description
+        field:
+          options:
+            empty: Empty
+            general: General
+            custom: Custom
+          clearable: false
+          default: empty
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          instructions: 'It can be used to determine the text used under the title on search engine results pages. If empty, search engines will automatically generate this text.'
+          localizable: false
+          listable: hidden
+          display: 'Meta description'
+      -
+        handle: seotamic_custom_meta_description
+        field:
+          input_type: text
+          character_limit: 200
+          type: textarea
+          localizable: false
+          listable: hidden
+          display: 'Custom Meta description'
+          if:
+            seotamic_meta_description: 'equals custom'
+      -
+        handle: seotamic_canonical
+        field:
+          type: link
+          instructions: 'By default it will be set to the page url'
+          localizable: false
+          listable: hidden
+          display: Canonical
+      -
+        handle: seotamic_social
+        field:
+          type: section
+          localizable: false
+          listable: hidden
+          display: Social
+      -
+        handle: seotamic_open_graph_title
+        field:
+          options:
+            title: Title
+            general: General
+            custom: Custom
+          clearable: false
+          default: title
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Open Graph title'
+      -
+        handle: seotamic_custom_open_graph_title
+        field:
+          input_type: text
+          character_limit: 100
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Custom Open Graph title'
+          if:
+            seotamic_open_graph_title: 'equals custom'
+      -
+        handle: seotamic_open_graph_description
+        field:
+          options:
+            meta: 'Meta description'
+            general: 'General description'
+            custom: Custom
+          clearable: false
+          default: general
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Open Graph description'
+      -
+        handle: seotamic_custom_open_graph_description
+        field:
+          input_type: text
+          character_limit: 200
+          type: textarea
+          localizable: false
+          listable: hidden
+          display: 'Custom Open Graph description'
+          if:
+            seotamic_open_graph_description: 'equals custom'
+      -
+        handle: seotamic_twitter_title
+        field:
+          options:
+            title: Title
+            general: General
+            custom: Custom
+          clearable: false
+          default: title
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Twitter title'
+      -
+        handle: seotamic_custom_twitter_title
+        field:
+          input_type: text
+          character_limit: 100
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Custom Twitter title'
+          if:
+            seotamic_twitter_title: 'equals custom'
+      -
+        handle: seotamic_twitter_description
+        field:
+          options:
+            meta: 'Meta description'
+            general: 'General description'
+            custom: Custom
+          clearable: false
+          default: general
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: 'Twitter description'
+      -
+        handle: seotamic_custom_twitter_description
+        field:
+          input_type: text
+          character_limit: 200
+          type: textarea
+          localizable: false
+          listable: hidden
+          display: 'Custom Twitter description'
+          if:
+            seotamic_twitter_description: 'equals custom'
+      -
+        handle: seotamic_image
+        field:
+          container: assets
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          instructions: 'If not set, the general image will be used. It''s best to use an image with a 1.91:1 aspect ratio that is at least 1200px wide for universal support. The image will be resized to 1200 width.'
+          localizable: false
+          listable: hidden
+          display: Image
+title: Flyers

@@ -1,0 +1,97 @@
+{
+    "name": "nn-dmt/terahertz-starter",
+    "description": "Terahertz",
+    "keywords": [
+        "statamic",
+        "cms",
+        "flat file",
+        "laravel"
+    ],
+    "type": "project",
+    "require": {
+        "php": "^8.0",
+        "aerni/zipper": "^1.6.1",
+        "alpshq/statamic-cache-evader": "^1.4",
+        "aryehraber/statamic-color-extractor": "^1.3",
+        "aryehraber/statamic-logbook": "^2.1",
+        "aryehraber/statamic-uuid": "^2.1",
+        "cnj/seotamic": "^2.0",
+        "codedge/statamic-move-entries": "^1.1",
+        "doublethreedigital/duplicator": "^2.2",
+        "fruitcake/laravel-cors": "^2.0.5",
+        "guzzlehttp/guzzle": "^7.2",
+        "jacksleight/statamic-lazy-logo": "^0.3.3",
+        "laravel/framework": "^9.0",
+        "laravel/sanctum": "^2.14",
+        "laravel/tinker": "^2.7",
+        "league/flysystem-aws-s3-v3": "^3.0",
+        "objectivehtml/statamic-events": "^0.11.0",
+        "octoper/statamic-blade-components": "^2.0",
+        "predis/predis": "^1.1",
+        "pusher/pusher-php-server": "^5.0",
+        "ritson/placid-statamic": "^3.1",
+        "sortarad/needledrop": "^1.0",
+        "statamic/cms": "3.3.16",
+        "statamic/collaboration": "^0.4.0",
+        "statamic/podcast-categories": "^1.0",
+        "stillat/relationships": "^1.0",
+        "thoughtco/statamic-restrict-fields": "^1.0",
+        "youfront/statamic-export": "^1.0"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.13",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "pre-update-cmd": [
+            "Statamic\\Console\\Composer\\Scripts::preUpdateCmd"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi",
+            "@php artisan statamic:install --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+title: Theme
+data:
+  social_links:
+    -
+      name: Soundcloud
+      url: 'https://soundcloud.com/swamp-music-1'
+      icon: theme/social/soundcloud.svg
+    -
+      name: Spotify
+      url: 'https://open.spotify.com/artist/7iy2PJRVCnqzbX7zaMFprc'
+      icon: theme/social/spotify.svg
+    -
+      name: Instagram
+      icon: theme/social/instagram.svg
+    -
+      name: Twitter
+      url: 'https://twitter.com/swampoflife'
+      icon: theme/social/twitter.svg
+    -
+      name: Email
+      url: 'mailto:swampmusic.usa@gmail.com'
+      icon: theme/social/email.svg
+  primary_color: '#66B066'
+  secondary_color: '#485D15'

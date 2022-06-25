@@ -1,0 +1,36 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "mix",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "mix --production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "cross-env": "^7.0",
+        "laravel-mix": "^6.0",
+        "postcss": "^8.4.14",
+        "postcss-import": "^14.0.1",
+        "postcss-nested": "^5.0.5",
+        "postcss-preset-env": "^6.7.0",
+        "tailwindcss": "^2.1.1",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@coinbarn/ergo-ts": "^0.3.0",
+        "@ergoplatform/ergo-js": "^1.6.0",
+        "@hotwired/turbo": "^7.0.0-rc.1",
+        "alpinejs": "^3.9.3",
+        "chroma-js": "^2.1.2",
+        "ergo-dapp-connector": "^0.1.1",
+        "plyr": "^3.6.8",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.7.4"
+    }
+}

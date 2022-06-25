@@ -1,0 +1,31 @@
+<div class="max-w-6xl mx-auto px-6 py-8 relative z-10">
+<div class="mx-auto rounded-lg shadow-xl mx-auto bg-cover max-w-6xl bg-repeat-y bg-center" style="background-image: url('{{ artist_photo }}')">
+<div class="mx-auto rounded-lg mx-auto px-8 max-w-6xl bg-white bg-opacity-75">
+    <div class="flex items-start">
+        <article class="pr-24 content pt-8 pb-8 flex-1">
+	<h1>{{ title }}</h1>
+	    <div class="flex items-start">
+            {{ if content }}
+            <div class="mt-8 content pt-8">
+                <h2>About {{ title }}</h2>
+
+
+                {{ content }}
+
+{{ else }}
+		</section>
+	<span>Bio coming Soon!</span>
+            {{ /if }}
+        </article>
+        <div class="hidden md:block w-[300px] relative group">
+{{ if artist_photo }}
+		<a href="{{ artist_photo:url }}" target="_blank">
+                <img src="{{ glide:artist_photo square="600" }}" alt="{{ artwork:alt ?? "Artist Photo" }}" width="300" class="mt-8 shadow-2xl inset-0 absolute z-10 rounded-lg group-hover:rotate-12 origin-bottom-left transform-gpu transition ease-in-out duration-200">
+		</a>
+{{ else }}
+{{ /if }}
+        </div>
+    </div>
+</div>
+</div>
+</div>

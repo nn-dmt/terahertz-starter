@@ -1,0 +1,32 @@
+export_paths:
+  - content
+  - config/filesystems.php
+  - config/statamic/assets.php
+  - resources/blueprints
+  - resources/css/site.css
+  - resources/views
+  - package.json
+  - public/assets
+  - public/css
+  - package.json
+  - tailwind.config.js
+  - webpack.mix.js
+dependencies:
+  alpshq/statamic-cache-evader: ^1.4
+  aryehraber/statamic-color-extractor: ^1.3
+  aryehraber/statamic-logbook: ^2.1
+  aryehraber/statamic-uuid: ^2.1
+  cnj/seotamic: ^2.0
+  codedge/statamic-move-entries: ^1.1
+  doublethreedigital/duplicator: ^2.2
+  fruitcake/laravel-cors: ^2.0.5
+  jacksleight/statamic-lazy-logo: ^0.3.3
+  objectivehtml/statamic-events: ^0.11.0
+  pusher/pusher-php-server: ^5.0
+  ritson/placid-statamic: ^3.1
+  sortarad/needledrop: ^1.0
+  statamic/collaboration: ^0.4.0
+  statamic/podcast-categories: ^1.0
+  stillat/relationships: ^1.0
+  thoughtco/statamic-restrict-fields: ^1.0
+  youfront/statamic-export: ^1.0
