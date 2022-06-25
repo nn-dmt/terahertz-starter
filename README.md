@@ -8,6 +8,8 @@
 
 [Tailwind CSS Documentation](https://v2.tailwindcss.com/docs)
 
+[Plyr.min.io Documentation](https://github.com/sampotts/plyr)
+
 ## About this kit
 
 This mostly-in-one web application aims to give music artists, record labels, media publishers and event organizers an online hub to manage all of their publications and media orientation metadata.
