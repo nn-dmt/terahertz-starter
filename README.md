@@ -4,7 +4,7 @@
 
 [Laravel Documentation](https://laravel.com/docs/9.x)
 
-[Statamic / Antlers Documentation](https://statamic.dev/new-antlers-parser#about)
+[Statamic / Antlers Documentation](https://statamic.dev/antlers)
 
 ## System Requirements
 •PHP8
