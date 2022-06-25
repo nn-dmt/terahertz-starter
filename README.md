@@ -2,6 +2,10 @@
 ### alpha release 0.0.1
 ### Created by Swamp.Audio with the help of the Statamic Team
 
+Laravel Documentation: https://laravel.com/docs/9.x
+
+Statamic Documentation: https://statamic.dev/
+
 ## System Requirements
 •PHP8
 
