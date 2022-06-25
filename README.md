@@ -1,5 +1,14 @@
 # Terahertz Starter kit for Statamic/Laravel
-## Created by Swamp.Audio with the help of the Statamic Team
+### Created by Swamp.Audio with the help of the Statamic Team
+
+## System Requirements
+•PHP8
+•Composer
+•Webserver
+
+If on Mac, we highly recommend Laravel Valet for local development: https://laravel.com/docs/9.x/valet
+
+## Installation
 
 Navigate to project directory in terminal
 
