@@ -65,3 +65,9 @@ The solution to this issue is to run ```npm run watch``` to watch for changes ac
 ## Snipcart
 
 This site utilizes a third party drop-in called Snipcart for fiat payment processing. In order to utilize Snipcart in your own project you must sign up for a merchant account at [Snipcart.com](https://snipcart.com)
+
+## Ergo
+
+This site utilizes special fields for decentralized payment processing using Ergo blockchain.
+
+In order to utilize the 'Ergo Price' field - you must have the [Ergo Payment Portal and Voucher Monitor Server](https://github.com/ThierryM1212/ergo-pay) running on localhost, as well as a way to expose the Payment Portal front end to the web on port 80/443.
