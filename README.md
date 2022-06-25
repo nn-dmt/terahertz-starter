@@ -1,6 +1,6 @@
 # Terahertz Starter kit for Statamic/Laravel
 ### alpha release 0.0.1
-### Created by Swamp.Audio with the help of the Statamic Team
+### Created with love by Swamp.Audio with the help of the Statamic Team
 
 [Laravel Documentation](https://laravel.com/docs/9.x)
 
