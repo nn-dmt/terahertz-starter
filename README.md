@@ -7,6 +7,10 @@
 
 •Composer
 
+•NPM
+
+•Yarn
+
 •Webserver
 
 •Snipcart merchant account (for fiat cart integration)
