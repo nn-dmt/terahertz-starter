@@ -6,6 +6,8 @@
 
 [Statamic / Antlers Documentation](https://statamic.dev/antlers)
 
+[Tailwind CSS Documentation](https://v2.tailwindcss.com/docs)
+
 ## System Requirements
 •PHP8
 
