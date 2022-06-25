@@ -27,6 +27,6 @@ You will run into a project error if the app key is not set. You can set the app
 
 You should now be presented with the starter kit home-page.
 
-You can log into the control panel at ```DIRECTORY_NAME.test/cp```
+If using Laravel Valet, you can log into the control panel at ```DIRECTORY_NAME.test/cp```
 
 This version is alpha.
