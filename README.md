@@ -59,7 +59,7 @@ If using Laravel Valet, you can log into the control panel at ```DIRECTORY_NAME.
 This version is alpha. There will be issues, and not all features from production have been added to this repository. Use at your own risk.
 
 
-## Troubleshooting
+## JIT Engine
 
 This framework combines front end assets together via laravel mix with the Just In Time engine.
 
