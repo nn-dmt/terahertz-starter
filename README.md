@@ -8,6 +8,12 @@
 
 [Tailwind CSS Documentation](https://v2.tailwindcss.com/docs)
 
+## About this kit
+
+This mostly-in-one web application aims to give music artists, record labels, media publishers and event organizers an online hub to manage all of their publications and media orientation metadata.
+
+This is being actively developed at [SWAMP.AUDIO](https://swamp.audio) and we will be pushing production updates to this repository some after some time testing.
+
 ## System Requirements
 •PHP8
 
