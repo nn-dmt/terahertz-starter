@@ -44,3 +44,14 @@ You should now be presented with the starter kit home-page.
 If using Laravel Valet, you can log into the control panel at ```DIRECTORY_NAME.test/cp```
 
 This version is alpha. There will be issues, and not all features from production have been added to this repository. Use at your own risk.
+
+
+## Troubleshooting
+
+This framework combines js,css and frontend together via laravel mix with the Just In Time engine.
+
+This means that your compiled assets remain incredibly small for optimal performance.
+
+It also means that if you make a design change and include a new class not before rendered by the engine, it will not display properly.
+
+The solution to this issue is to run ```npm run watch``` to watch for changes actively or ```npm run production``` after changes have been finalized.
