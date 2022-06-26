@@ -74,7 +74,7 @@ The solution to this issue is to run ```npm run watch``` to watch for changes ac
 
 This site utilizes a third party drop-in called Snipcart for fiat payment processing. In order to utilize the 'Fiat Price' field in your own project you must sign up for a merchant account at [Snipcart.com](https://snipcart.com)
 
-After receiving your public API key from Snipcart you can uncomment the <script> lines near the bottom of layout.antlers.html pertaining to snipcart. Enter your API in the appropriate secion (replace # symbol).
+After receiving your public API key from Snipcart you can uncomment the <script> lines near the bottom of layout.antlers.html pertaining to snipcart. Enter your API in the appropriate section (replace # symbol).
 
 ## Ergo
 
